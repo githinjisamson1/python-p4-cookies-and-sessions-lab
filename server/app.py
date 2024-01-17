@@ -55,8 +55,8 @@ def show_article(id):
     # check if the user has viewed 3 or fewer pages
     if session["page_views"] <= 3:
         response = make_response(jsonify(
-            article_dict, 200
-        ))
+            article_dict
+        ), 400)
 
         response.headers["Content-Type"] = "application/json"
         return response
